@@ -16,5 +16,3 @@ $hook_array['after_save'][] = Array(
     //The method to call.
     'AddStudentToGradebook'
 );
-
-?>

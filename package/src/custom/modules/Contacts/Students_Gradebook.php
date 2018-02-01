@@ -6,10 +6,9 @@ class Students_Gradebook
 {
     function AddStudentToGradebook(&$bean, $event, $arguments)
     {
-        //If this is a new student record, add the student to the gradebook app
+        //If this is a new student record, create a new job that adds the student to the GradebookFake app
+        // and put the job on the Sugar Job Queue to be executed the new time the Queue is run
         if(!$arguments['isUpdate']){
-            $GLOBALS['log']->fatal('About to add a job to the queue');
-
             require_once('include/SugarQueue/SugarJobQueue.php');
 
             //create the new job
@@ -28,12 +27,7 @@ class Students_Gradebook
             //push into the queue to run
             $jq = new SugarJobQueue();
             $jobid = $jq->submitJob($job);
-
-            $GLOBALS['log']->fatal('Finished adding job to the queue');
-
         }
 
     }
 }
-
-?>

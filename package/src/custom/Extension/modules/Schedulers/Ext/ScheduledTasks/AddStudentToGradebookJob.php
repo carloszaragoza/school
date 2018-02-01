@@ -1,5 +1,7 @@
 <?php
 
+use GradebookFake\RecordManager;
+
 function AddStudentToGradebookJob($job)
 {
     if (!empty($job->data))
@@ -8,9 +10,11 @@ function AddStudentToGradebookJob($job)
         $name = $bean->name;
         $first_name = $bean->first_name;
         $last_name = $bean->last_name;
-        $email = $bean->email;
-        $GLOBALS['log']->fatal('Adding ' . $first_name . ' ' . $last_name . ' with email $email to gradebook: ' . $name);
-        return true;
+        $email = $bean->email1;
+
+        //Call the external GradebookFake app to create a new record in it
+        $rm = new RecordManager();
+        return $rm->createStudentRecord($email, $first_name, $last_name);
     }
 
     return false;
