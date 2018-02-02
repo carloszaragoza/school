@@ -1,6 +1,7 @@
 <?php
 
-use Sugarcrm\GradebookFake\RecordManager;
+use Sugarcrm\Sugarcrm\custom\gradebook_fake\RecordManager;
+
 
 function AddStudentToGradebookJob($job)
 {
@@ -11,9 +12,6 @@ function AddStudentToGradebookJob($job)
         $first_name = $bean->first_name;
         $last_name = $bean->last_name;
         $email = $bean->email1;
-
-        $GLOBALS['log']->fatal('Calling GradebookFake to add ' . $first_name . ' ' . $last_name . ' with email ' .
-            $email . ' to gradebook.');
 
         //Call the external GradebookFake app to create a new record in it
         $rm = new RecordManager();

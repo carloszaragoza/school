@@ -19,8 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sugarcrm\\ProfessorM\\": "package/",
-            "Sugarcrm\\GradebookFake\\": "package/src/custom/gradebook_fake/"
+            "Sugarcrm\\ProfessorM\\": "package/"
         }
     }
 }
