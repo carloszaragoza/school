@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-use GradebookFake\RecordManager;
+use Sugarcrm\GradebookFake\RecordManager;
 use PHPUnit\Framework\TestCase;
 
 class RecordManagerTest extends TestCase

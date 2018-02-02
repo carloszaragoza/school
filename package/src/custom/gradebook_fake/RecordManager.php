@@ -1,6 +1,8 @@
 <?php
 
-namespace GradebookFake;
+//TODO:  Is there a requirement that MLPs use the Sugarcrm nameespace? I wasn't able to install the MLP and get it
+// run successfully when the namespace did not start with Sugarcrm
+namespace Sugarcrm\GradebookFake;
 
 /**
  * Class RecordManager
@@ -20,6 +22,7 @@ class RecordManager
      */
     function createStudentRecord($email, $firstName, $lastName)
     {
+        $GLOBALS['log']->fatal('Inside of createStudentRecord');
         if ($email === 'forceerror@example.com'){
             throw new \Exception("An error was forced because the email address forceerror@example.com was used.");
         }
