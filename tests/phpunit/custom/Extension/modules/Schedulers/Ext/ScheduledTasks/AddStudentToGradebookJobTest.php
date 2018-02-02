@@ -8,12 +8,12 @@ include '../package/src/custom/Extension/modules/Schedulers/Ext/ScheduledTasks/A
 
 class AddStudentToGradebookJobTest extends TestCase
 {
-// tests coming soon
-//    public function testAdd(){
-//        AddStudentToGradebookJob(null);
-//
-//
-//    }
+// TODO:  add tests here
+    public function testAdd(){
+        $this->assertTrue(true);
+
+
+    }
 
 
 }
